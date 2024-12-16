@@ -28,6 +28,11 @@ go version
 ## Repository
 - https://github.com/tkmagesh/Cisco-GoFoundation-Dec-2024
 
+## Books
+- Structure & Interpretation of Computer Programs
+    - https://web.mit.edu/6.001/6.037/sicp.pdf
+
+
 ## Why Go?
 - Simplicity
     - ONLY 25 keywords
