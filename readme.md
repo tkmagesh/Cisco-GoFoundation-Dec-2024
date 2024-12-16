@@ -57,4 +57,12 @@ go version
         - "sync" package
         - "sync/atomic" package
 
+## Compile 
+```shell
+go build <filename.go>
+```
 
+### Compile & Execute
+```shell
+go run <filename.go>
+```
