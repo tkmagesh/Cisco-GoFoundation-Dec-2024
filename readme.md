@@ -57,7 +57,8 @@ go version
         - "sync" package
         - "sync/atomic" package
 
-## Compile 
+## Compilation & Build
+### Compile 
 ```shell
 go build <filename.go>
 ```
@@ -65,4 +66,20 @@ go build <filename.go>
 ### Compile & Execute
 ```shell
 go run <filename.go>
+```
+
+### Cross compilation
+#### To get the complete list of environment variables
+```shell
+go env
+```
+
+#### To get the list of supported platforms
+```shell
+go tool dist list
+```
+
+#### Cross compilation
+```shell
+ GOOS=windows GOARCH=amd64 go build 01-hello-world.go
 ```
