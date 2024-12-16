@@ -22,7 +22,7 @@ func main() {
 
 	n1, n2 := 100, 200
 	fmt.Printf("Before swapping, n1 = %d & n2 = %d\n", n1, n2)
-	swap( /*  */ )
+	swap(&n1, &n2)
 	fmt.Printf("After swapping, n1 = %d & n2 = %d\n", n1, n2)
 
 }
@@ -32,6 +32,6 @@ func increment(no *int) {
 	*no = *no + 1
 }
 
-func swap( /* .... */ ) {
-	/* .... */
+func swap(x *int, y *int) {
+	*x, *y = *y, *x
 }
