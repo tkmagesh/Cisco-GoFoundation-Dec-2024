@@ -89,6 +89,7 @@ func main() {
 		fmt.Printf(str, x, y, result)
 	*/
 
+	// multi assignment
 	/*
 		var x,y int = 100, 200
 		var str string = "sum of %d and %d is %d\n"
@@ -124,11 +125,9 @@ func main() {
 	*/
 
 	// using ":="
-
 	/*
 		x, y, str := 100, 200, "sum of %d and %d is %d\n"
 		result := x + y
 		fmt.Printf(str, x, y, result)
-		fmt.Println("EOF")
 	*/
 }
