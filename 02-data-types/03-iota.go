@@ -79,9 +79,9 @@ func main() {
 	*/
 
 	const (
-		X = 1 << iota
-		W
-		R
+		X   = 1 << iota // 1 << 0 == 001
+		W               // 1 << 1 == 010
+		R               // 1 << 2 == 100
 		XW  = X | W
 		WR  = W | R
 		XWR = X | W | R
