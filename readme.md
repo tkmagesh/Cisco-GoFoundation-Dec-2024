@@ -178,3 +178,38 @@ go tool dist list
 ### Recovery
 - "recover()" returns the error (argument to the panic() function) if there is a panic
 - Apt to be used in the deferred functions
+
+## Modules & Packages
+### Module
+- Any code that need to versioned and deployed together
+- Typically, a folder with go.mod file
+- go.mod
+    - manifest file for the module
+    - name
+        - typically, includes the complete repo path
+    - go runtime version
+    - dependencies
+#### Create a module
+```shell
+go mod init <module_name>
+# ex:
+go mod init github.com/tkmagesh/cisco-gofoundation-dec-2024/11-modularity-demo
+```
+
+#### Execute a module
+```shell
+go run .
+```
+
+#### Create a build
+```shell
+go build .
+# OR
+go build -o <binary_name> .
+```
+
+### Package
+- Internal organization of code in a module
+- Just folders
+- Can be nested
+- Scope can be defined at the package level
