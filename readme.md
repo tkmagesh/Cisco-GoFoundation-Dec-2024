@@ -168,3 +168,13 @@ go tool dist list
         - errors.New()
         - fmt.Errorf()
         - Custom type implementing "error" interface
+
+## Panic & Recovery
+### Panic
+- State of the application where the application execution cannot proceed further
+- Application is gradually brought to a halt after executing all the deferred functions
+- using "panic()" to create a panic
+    - By convention, an error is used as an argument for the panic() function
+### Recovery
+- "recover()" returns the error (argument to the panic() function) if there is a panic
+- Apt to be used in the deferred functions
