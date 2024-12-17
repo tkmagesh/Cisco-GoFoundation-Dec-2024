@@ -4,18 +4,21 @@ Handle the edge case scenarios using errors (userChoice)
 
 package main
 
-import "fmt"
+import (
+	"errors"
+	"fmt"
+)
 
 func main() {
-	var userChoice int
+
 	for {
-		userChoice = getUserChoice()
+		userChoice, err := getUserChoice()
+		if err != nil {
+			fmt.Println(err)
+			continue
+		}
 		if userChoice == 5 {
 			break
-		}
-		if userChoice < 1 || userChoice > 5 {
-			fmt.Println("Invalid choice")
-			continue
 		}
 		processUserChoice(userChoice)
 	}
@@ -59,8 +62,7 @@ func getOperands() (n1, n2 int) {
 	return
 }
 
-func getUserChoice() int {
-	var userChoice int
+func getUserChoice() (userChoice int, err error) {
 	fmt.Println("1. Add")
 	fmt.Println("2. Subtract")
 	fmt.Println("3. Multiply")
@@ -68,5 +70,7 @@ func getUserChoice() int {
 	fmt.Println("5. Exit")
 	fmt.Println("Enter the choice:")
 	fmt.Scanln(&userChoice)
-	return userChoice
+	if userChoice < 1 || userChoice > 5 {
+		err = errors.New("invalid userchoice")
+	}
 }
