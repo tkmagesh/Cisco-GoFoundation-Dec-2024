@@ -73,4 +73,5 @@ func getUserChoice() (userChoice int, err error) {
 	if userChoice < 1 || userChoice > 5 {
 		err = errors.New("invalid userchoice")
 	}
+	return
 }
