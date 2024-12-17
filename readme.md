@@ -135,3 +135,11 @@ go tool dist list
 ### Package scope
 - CANNOT use ":="
 - CAN have "unused" variables
+
+## Functions
+    - Can return more than 1 result
+    - Supports "Named results"
+    - Anonymous functions
+        - Functions defined in another function
+        - Cannot have a name
+        - Must be immediately invoked
