@@ -156,4 +156,6 @@ go tool dist list
 - Array
     - Fixed sized typed collecton
 - Slice
+    - Varying sized typed collection
+    - A slice a pointer to an underlying array
 - Map
