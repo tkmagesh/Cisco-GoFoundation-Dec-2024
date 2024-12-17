@@ -160,3 +160,11 @@ go tool dist list
     - A slice a pointer to an underlying array
 - Map
     - typed collection of key/value pairs
+
+## Error Handling
+    - Errors are values returned from a function
+    - By Convention, errors are objects implementing "error" interface
+    - Creation
+        - errors.New()
+        - fmt.Errorf()
+        - Custom type implementing "error" interface
