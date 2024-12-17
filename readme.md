@@ -213,3 +213,24 @@ go build -o <binary_name> .
 - Just folders
 - Can be nested
 - Scope can be defined at the package level
+
+### Using OSS 
+#### Add an OSS package
+- By default, OSS packages are downloaded in the GOPATH/pkg folder
+```shell
+go get <name>
+# ex:
+go get github.com/fatih/color
+```
+#### Update the go.mod file references
+```shell
+go mod tidy
+```
+#### Only download the dependencies
+```shell
+go mod download
+```
+#### To localize the dependencies
+```shell
+go mod vendor
+```

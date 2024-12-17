@@ -10,10 +10,14 @@ import (
 
 	// nested package
 	"github.com/tkmagesh/cisco-gofoundation-dec-2024/11-modularity-demo/calculator/utils"
+
+	// using OSS package
+	"github.com/fatih/color"
 )
 
 func main() {
 	run()
+	color.Red("Hello, World!")
 	/*
 		calculator.Add(100, 200)
 		calculator.Subtract(100, 200)
