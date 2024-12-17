@@ -143,3 +143,5 @@ go tool dist list
         - Functions defined in another function
         - Cannot have a name
         - Must be immediately invoked
+    - Variadic functions
+        - Can accept varying number of arguments
