@@ -138,7 +138,7 @@ go tool dist list
 
 ## Functions
     - Can return more than 1 result
-    - Supports "Named results"
+        - Supports "Named results"
     - Anonymous functions
         - Functions defined in another function
         - Cannot have a name
@@ -151,3 +151,9 @@ go tool dist list
         - Return a function as a return value
     - Deferred functions
         - Postpone the execution of a function until the current function execution is completed
+
+## Collections
+- Array
+    - Fixed sized typed collecton
+- Slice
+- Map
