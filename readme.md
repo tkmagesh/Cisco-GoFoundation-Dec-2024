@@ -159,3 +159,4 @@ go tool dist list
     - Varying sized typed collection
     - A slice a pointer to an underlying array
 - Map
+    - typed collection of key/value pairs
