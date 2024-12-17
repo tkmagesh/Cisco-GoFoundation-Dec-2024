@@ -149,3 +149,5 @@ go tool dist list
         - Assign a function as a value to a variable
         - Pass a function as an argument
         - Return a function as a return value
+    - Deferred functions
+        - Postpone the execution of a function until the current function execution is completed
