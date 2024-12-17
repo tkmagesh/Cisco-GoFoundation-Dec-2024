@@ -145,3 +145,7 @@ go tool dist list
         - Must be immediately invoked
     - Variadic functions
         - Can accept varying number of arguments
+    - Higher Order Functions
+        - Assign a function as a value to a variable
+        - Pass a function as an argument
+        - Return a function as a return value
