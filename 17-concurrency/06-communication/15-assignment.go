@@ -15,24 +15,48 @@ import (
 	"sync"
 )
 
+// communicate by sharing memory
+var primes []int
+
 func main() {
 	var start, end int
 	wg := &sync.WaitGroup{}
 	fmt.Println("Enter the start and end :")
 	fmt.Scanln(&start, &end)
-	for no := start; no <= end; no++ {
-		wg.Add(1)
-		go printIfPrime(wg, no)
-	}
+	wg.Add(1)
+	go GenPrimes(start, end, wg)
 	wg.Wait()
+	for _, primeNo := range primes {
+		fmt.Println("Prime No :", primeNo)
+	}
 }
 
-func printIfPrime(wg *sync.WaitGroup, no int) {
+func GenPrimes(start, end int, wg *sync.WaitGroup) {
 	defer wg.Done()
+	wg2 := &sync.WaitGroup{}
+	var mutex sync.Mutex
+	for no := start; no <= end; no++ {
+		wg2.Add(1)
+		go func() {
+			defer wg2.Done()
+			if IsPrime(no) {
+				mutex.Lock()
+				{
+					primes = append(primes, no)
+				}
+				mutex.Unlock()
+			}
+		}()
+	}
+	wg2.Wait()
+
+}
+
+func IsPrime(no int) bool {
 	for i := 2; i <= (no / 2); i++ {
 		if no%i == 0 {
-			return
+			return false
 		}
 	}
-	fmt.Println("Prime No :", no)
+	return true
 }
