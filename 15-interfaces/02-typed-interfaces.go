@@ -46,7 +46,9 @@ func PrintArea(x interface{}) {
 }
 */
 
-func PrintArea(x interface{ Area() float64 }) {
+type AreaFinder interface{ Area() float64 }
+
+func PrintArea(x AreaFinder) {
 	fmt.Println("Area :", x.Area())
 }
 
@@ -72,16 +74,31 @@ func (s Square) Perimeter() float64 {
 	return 4 * s.Side
 }
 
-func PrintPerimeter(x interface{ Perimeter() float64 }) {
+type PerimeterFinder interface{ Perimeter() float64 }
+
+func PrintPerimeter(x PerimeterFinder) {
 	fmt.Println("Perimeter :", x.Perimeter())
 }
 
 // ver 3.0
 
+/*
 func PrintShape(x interface {
-	interface{ Area() float64 }
-	interface{ Perimeter() float64 }
+	AreaFinder
+	PerimeterFinder
 }) {
+	PrintArea(x)      // x => interface{ Area() float64 }
+	PrintPerimeter(x) // x => interface{ Perimeter() float64 }
+}
+*/
+
+// interface composition
+type ShapeStatsFinder interface {
+	AreaFinder
+	PerimeterFinder
+}
+
+func PrintShape(x ShapeStatsFinder) {
 	PrintArea(x)      // x => interface{ Area() float64 }
 	PrintPerimeter(x) // x => interface{ Perimeter() float64 }
 }
