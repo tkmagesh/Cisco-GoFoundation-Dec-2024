@@ -10,6 +10,7 @@ func (s MyString) Length() int {
 }
 
 func main() {
-	s := MyString("Labore qui ex consequat do ut pariatur fugiat nulla magna veniam aute.")
+	var str string = "Labore qui ex consequat do ut pariatur fugiat nulla magna veniam aute."
+	s := MyString(str)
 	fmt.Println(s.Length())
 }
