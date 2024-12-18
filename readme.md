@@ -234,3 +234,14 @@ go mod download
 ```shell
 go mod vendor
 ```
+
+## Concurrency
+### Traditional Concurrency Model
+![image](./images/OS-Thread-Based-Concurrency.png)
+
+### Go Concurrency Model
+![image](./images/Go-Concurrency-Model.png)
+
+### sync.WaitGroup
+- semaphore based counter
+- has the ability to block the execution of a function until the counter becomes 0
