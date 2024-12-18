@@ -15,13 +15,15 @@ func main() {
 	fmt.Scanln(&start, &end)
 	for no := start; no <= end; no++ {
 		wg.Add(1)
-		go printIfPrime(wg, no)
+		go func() {
+			defer wg.Done()
+			printIfPrime(no)
+		}()
 	}
 	wg.Wait()
 }
 
-func printIfPrime(wg *sync.WaitGroup, no int) {
-	defer wg.Done()
+func printIfPrime(no int) {
 	for i := 2; i <= (no / 2); i++ {
 		if no%i == 0 {
 			return
